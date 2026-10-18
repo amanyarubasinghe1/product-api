@@ -38,5 +38,9 @@ public class ProductService {
                 .filter(p -> p.getName().contains(name))
                 .toList();
     }
+    @DeleteMapping("/products/{id}")
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
+    }
 
 }
