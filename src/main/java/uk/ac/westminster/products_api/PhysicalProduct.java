@@ -23,7 +23,7 @@ public class PhysicalProduct extends Product {
     //Task 9
     // A PhysicalProduct IS-A Product because it
     // has the common properties of every Product.
-    
+
     // A ShoppingCart is NOT a Product because
     // it contains products (HAS-A relationship).
 }
