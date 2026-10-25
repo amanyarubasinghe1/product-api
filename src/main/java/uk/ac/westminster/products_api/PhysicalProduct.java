@@ -1,5 +1,6 @@
 package uk.ac.westminster.products_api;
 
+
 public class PhysicalProduct extends Product {
 
     private double weightKg;
@@ -19,4 +20,10 @@ public class PhysicalProduct extends Product {
     public void setWeightKg() {
         this.weightKg = weightKg;
     }
+    //Task 9
+    // A PhysicalProduct IS-A Product because it
+    // has the common properties of every Product.
+    
+    // A ShoppingCart is NOT a Product because
+    // it contains products (HAS-A relationship).
 }
