@@ -20,6 +20,8 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
         return "Hello from Spring Boots!";
+    public String hello(){
+        return "Hello from Spring Boot!";
     }
 
     @GetMapping("/status")
