@@ -6,13 +6,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Autowired
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
+    private final ProductService productService;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
     @GetMapping("/{id}")
     public Product getById(@PathVariable Long id) {
-        return productServices.getProductById(id);
+        return productService.getProductById(id).orElse(null);
     }
 }

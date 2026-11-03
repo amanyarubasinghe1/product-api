@@ -4,23 +4,25 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-@Service
-public class ProductService{}
+
 @Service
 public class ProductService {
-    private List<Product> product = new ArrayList<>();
-    private Long nextId =1L;
+    private List<Product> products = new ArrayList<>();
+    private Long nextId = 1L;
 
-    public List<Product>getAllProducts(){
+    public List<Product> getAllProducts() {
         return products;
     }
-    public Product addProduct(Product product){
+
+    public Product addProduct(Product product) {
         product.setId(nextId++);
+        products.add(product);
         return product;
     }
-    public optional<Product>getProductById(Long id){
+
+    public Optional<Product> getProductById(Long id) {
         return products.stream()
-                .filter(p->p.getId().equals(id))
+                .filter(p -> p.getId().equals(id))
                 .findFirst();
     }
 }
