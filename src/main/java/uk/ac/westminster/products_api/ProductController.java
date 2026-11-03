@@ -9,6 +9,16 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+    private final ProductService productService;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @GetMapping("/{id}")
+    public Product getById(@PathVariable Long id) {
+        return productService.getProductById(id).orElse(null);
     @Autowired
     private ProductService productService;
 

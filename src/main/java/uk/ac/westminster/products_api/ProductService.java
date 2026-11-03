@@ -8,6 +8,9 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
+    private List<Product> products = new ArrayList<>();
+    private Long nextId = 1L;
+
 
     private final List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
